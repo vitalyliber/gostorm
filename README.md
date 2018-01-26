@@ -26,10 +26,10 @@ Linux
 GOOS=linux GOARCH=amd64 go build -o gostorm_lunux
 ```
 
-iOS
+Mac OS
 
 ```bash
-GOOS=darwin GOARCH=amd64 go build -o gostorm_ios
+GOOS=darwin GOARCH=amd64 go build -o gostorm_macos
 ```
 
 Windows
