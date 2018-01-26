@@ -4,7 +4,7 @@
 
 ## How to use gostorm?
 
-- Download version for your OS
+- Build or download version for your OS
 
 - Run and paste url:
 ```bash
@@ -17,3 +17,23 @@ Enter number of streams: 500
 ```
 
 - Check the site accessible
+
+## Build for your platform
+
+Linux
+
+```bash
+GOOS=linux GOARCH=amd64 go build -o gostorm_lunux
+```
+
+iOS
+
+```bash
+GOOS=darwin GOARCH=amd64 go build -o gostorm_ios
+```
+
+Windows
+
+```bash
+GOOS=windows GOARCH=amd64 go build -o gostorm_windows
+```
