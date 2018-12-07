@@ -1,6 +1,6 @@
 # gostorm
 
-**Tool for destroying sites**
+Minimalistic performance and load testing tool written in Go.
 
 ## How to use gostorm?
 
