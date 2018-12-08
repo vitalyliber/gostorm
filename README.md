@@ -4,7 +4,20 @@ Minimalistic performance and load testing tool written in Go.
 
 ## How to use gostorm?
 
-- Build or download version for your OS
+- Download and install to MacOS
+
+```
+curl -L https://github.com/vitalyliber/gostorm/releases/download/v.1.0.1/gostorm_macos -o /usr/local/bin/gostorm
+sudo chmod a+x /usr/local/bin/gostorm
+```
+
+- Download and install to Linux
+
+
+```
+curl -L https://github.com/vitalyliber/gostorm/releases/download/v.1.0.1/gostorm_linux -o /usr/local/bin/gostorm
+sudo chmod a+x /usr/local/bin/gostorm
+```
 
 - Run and paste url:
 ```bash
