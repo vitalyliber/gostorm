@@ -36,16 +36,24 @@ func main() {
 
 func storm(url string) {
 	for {
-		log.Println("Start attack to url:", url)
+		log.Println("Start load test on the url:", url)
 		resp, err := http.Get(url)
 		if err != nil {
-			log.Println("Got error code from site:", resp.Status)
+			log.Println("Got error code from url:", resp.Status)
 			return
 		} else {
-			log.Println("Success attack:", resp.Status)
+			log.Println("Load test passed successfuly:", resp.Status)
 		}
-		defer resp.Body.Close()
+
+		defer func() {
+			err := resp.Body.Close()
+			if err != nil {
+				log.Println("Error while closing connection", err)
+			}
+			return
+		}()
+
 		counter += 1
-		log.Println("Number of attack:", counter)
+		log.Println("Number of successful test:", counter)
 	}
 }
