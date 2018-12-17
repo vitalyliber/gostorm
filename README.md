@@ -7,29 +7,42 @@ Minimalistic performance and load testing tool written in Go.
 - Download and install to MacOS
 
 ```
-curl -L https://github.com/vitalyliber/gostorm/releases/download/v.1.0.1/gostorm_macos -o /usr/local/bin/gostorm
+curl -L https://github.com/vitalyliber/gostorm/releases/download/v.1.0.2/gostorm_macos -o /usr/local/bin/gostorm
 sudo chmod a+x /usr/local/bin/gostorm
 ```
 
 - Download and install to Linux
 
 
-```
-curl -L https://github.com/vitalyliber/gostorm/releases/download/v.1.0.1/gostorm_linux -o /usr/local/bin/gostorm
+```bash
+curl -L https://github.com/vitalyliber/gostorm/releases/download/v.1.0.2/gostorm_linux -o /usr/local/bin/gostorm
 sudo chmod a+x /usr/local/bin/gostorm
 ```
 
-- Run and paste url:
+- Run with flags:
 ```bash
-Enter site url: https://example.com
-```
-- Enter number of streams:
-
-```bash
-Enter number of streams: 500
+gostorm -url=https://some-url.ru -streams=500 -timeout=1
 ```
 
 - Check the site accessible
+
+## Flags
+
+```bash
+gostorm -h
+```
+
+Output:
+```bash
+Usage of ./main:
+  -streams int
+        a number of streams (default 42)
+  -timeout int
+        timeout in minutes for working of program (default 1)
+  -url string
+        a site url (default "https://some-url.com")
+
+```
 
 ## Build for your platform
 
