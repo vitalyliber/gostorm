@@ -4,11 +4,13 @@ import (
 	"flag"
 	"log"
 	"net/http"
+	"time"
 )
 
 var counter = 0
 var urlString = flag.String("url", "https://some-url.com", "a site url")
 var streams = flag.Int("streams", 42, "a number of streams")
+var timeout = flag.Int("timeout", 1, "timeout in minutes for working of program")
 
 func main() {
 	flag.Parse()
@@ -22,7 +24,7 @@ func main() {
 		sum += 1
 	}
 
-	storm(*urlString)
+	time.Sleep(time.Duration(*timeout) * time.Minute)
 }
 
 func storm(url string) {
