@@ -7,7 +7,7 @@ Minimalistic performance and load testing tool written in Go.
 - Download and install to MacOS
 
 ```
-curl -L https://github.com/vitalyliber/gostorm/releases/download/v.1.0.1/gostorm_macos -o /usr/local/bin/gostorm
+curl -L https://github.com/vitalyliber/gostorm/releases/download/v.1.0.2/gostorm_macos -o /usr/local/bin/gostorm
 sudo chmod a+x /usr/local/bin/gostorm
 ```
 
@@ -15,7 +15,7 @@ sudo chmod a+x /usr/local/bin/gostorm
 
 
 ```bash
-curl -L https://github.com/vitalyliber/gostorm/releases/download/v.1.0.1/gostorm_linux -o /usr/local/bin/gostorm
+curl -L https://github.com/vitalyliber/gostorm/releases/download/v.1.0.2/gostorm_linux -o /usr/local/bin/gostorm
 sudo chmod a+x /usr/local/bin/gostorm
 ```
 
