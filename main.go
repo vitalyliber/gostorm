@@ -1,37 +1,28 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
-	"bufio"
+	"flag"
 	"log"
-	"os"
-	"strconv"
-	"strings"
+	"net/http"
 )
 
 var counter = 0
+var urlString = flag.String("url", "https://some-url.com", "a site url")
+var streams = flag.Int("streams", 42, "a number of streams")
 
 func main() {
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Enter site url: ")
-	urlString, _ := reader.ReadString('\n')
-	urlString = strings.TrimSuffix(urlString, "\n")
-
-	fmt.Print("Enter number of streams: ")
-	streamsString, _ := reader.ReadString('\n')
-	streamsString = strings.TrimSuffix(streamsString, "\n")
-	streams, _ := strconv.Atoi(streamsString)
-	log.Println("Streams:", streams)
+	flag.Parse()
+	log.Println("Url:", *urlString)
+	log.Println("Streams number:", *streams)
 
 	sum := 1
-	for sum < streams {
-		go storm(urlString)
+	for sum < *streams {
+		go storm(*urlString)
 		log.Println("Goroutine was created with number:", sum)
 		sum += 1
 	}
 
-	storm(urlString)
+	storm(*urlString)
 }
 
 func storm(url string) {

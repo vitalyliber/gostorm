@@ -19,14 +19,9 @@ curl -L https://github.com/vitalyliber/gostorm/releases/download/v.1.0.1/gostorm
 sudo chmod a+x /usr/local/bin/gostorm
 ```
 
-- Run and paste url:
+- Run with flags:
 ```bash
-Enter site url: https://example.com
-```
-- Enter number of streams:
-
-```bash
-Enter number of streams: 500
+gostorm -url=https://some-url.ru -streams=500
 ```
 
 - Check the site accessible
